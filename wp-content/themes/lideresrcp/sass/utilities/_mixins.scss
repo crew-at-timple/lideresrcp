@@ -1,0 +1,68 @@
+/* ============ MIXINS ============= */
+//@include name(attr);
+
+@mixin font($xs, $sm: $xs, $md: $sm, $lg: $md, $xl: $lg, $xxl: $xl) {
+  font-size: $xs;
+
+  @include media-breakpoint-between(sm, md) {
+    font-size: $sm;
+  }
+
+  @include media-breakpoint-between(md, lg) {
+    font-size: $md;
+  }
+
+  @include media-breakpoint-between(lg, xl) {
+    font-size: $lg;
+  }
+
+  @include media-breakpoint-between(xl, xxl) {
+    font-size: $xl;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    font-size: $xxl;
+  }
+}
+
+
+/* ============ EXTENDS ============= */
+// @extend %name;
+
+
+%bg-cover{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+%icomoon{
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+%absolute-center{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 1;
+}
+
+%crips-edges{
+  image-rendering: -moz-crisp-edges;         /* Firefox */
+  image-rendering:   -o-crisp-edges;         /* Opera */
+  image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */
+}

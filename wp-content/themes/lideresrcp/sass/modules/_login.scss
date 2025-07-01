@@ -1,0 +1,64 @@
+.login-container{
+    padding:16px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap:60px;
+
+    &--inner{
+        background-color: #11192C;
+        border-radius:10px;
+        padding:24px 20px 20px;
+        max-width: 400px;
+        width: 100%;
+        color:#fff;
+    }
+
+    &--header{
+        display: flex;
+        margin-bottom: 18px;
+
+        &_icon{
+            width:88px;
+            flex-basis: 88px;
+            flex-grow: 0;
+            flex-shrink: 0;
+
+            img{
+                width:100%;
+                height:auto;
+            }
+
+        }
+    }
+
+    &--label{
+        margin-bottom:25px;
+        font-size: 16px;
+    }
+
+    &--message{
+        font-size: 14px;
+    }
+
+    &--confirmation{
+        margin: 80px 0;
+        
+        &_icon{
+            width:114px;
+            margin:0 auto 20px;
+            
+            img{
+                width:100%;
+                height:auto;
+            }
+        }
+
+
+        .login-container--label{    
+            margin-bottom: 50px;
+        }
+    }
+} 

@@ -1,0 +1,102 @@
+.box-spinner-border,
+.box-spinner-grow{
+  position: relative;
+  color:$preload-light-color;
+
+  &:before,
+  &:after{
+    display: block;
+    content: '';
+    visibility: hidden;
+    pointer-events: none;
+    position: absolute;
+    opacity: 0;
+  }
+
+  &:before{
+    width: 100%;
+    height: 100%;
+    background: $preload-light-background;
+    top:0;
+    left: 0;
+    border-radius:inherit;
+    z-index: 10;
+  }
+
+  &.dark{
+    &:before{
+      background: $preload-dark-background;
+    }
+  }
+
+  &.loading{
+    &:before,
+    &:after{
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+    }
+  }
+
+  &:after{
+    width: 2rem;
+    height: 2rem;
+    margin: -1em 0 0 -1em;
+    vertical-align: text-bottom;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    z-index: 11;
+  }
+
+  &-sm{
+    &:after{
+      width: 1rem;
+      height: 1rem;
+      margin: -0.5em 0 0 -0.5em;
+    }
+  }
+
+  &-lg{
+    &:after{
+      width: 3rem;
+      height: 3rem;
+      margin: -1.5em 0 0 -1.5em;
+    }
+  }
+}
+
+.box-spinner-border{
+  &:after{
+    border: .25em solid $preload-light-color;
+    border-right-color: transparent;
+    animation: spinner-border .75s linear infinite;
+  }
+
+  &-sm{
+    &:after{
+      border-width: .2em;
+    }
+  }
+
+  &.dark{
+    &:after{
+      border-color: $preload-dark-color;
+      border-right-color: transparent;
+    }
+  }
+
+}
+
+.box-spinner-grow{
+  &:after{
+    background-color: $preload-light-color;
+    animation: spinner-grow .75s linear infinite;
+  }
+
+  &.dark{
+    &:after{
+      background-color: $preload-dark-color;
+    }
+  }
+}

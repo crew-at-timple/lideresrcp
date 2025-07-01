@@ -1,0 +1,81 @@
+@font-face {
+    font-family: 'BentonSans';
+    src: url('BentonSans-ExtraLight.woff2') format('woff2'),
+        url('BentonSans-ExtraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BentonSans';
+    src: url('BentonSans-Thin.woff2') format('woff2'),
+        url('BentonSans-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BentonSans';
+    src: url('BentonSans-Light.woff2') format('woff2'),
+        url('BentonSans-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BentonSans';
+    src: url('BentonSans-Medium.woff2') format('woff2'),
+        url('BentonSans-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BentonSans';
+    src: url('BentonSans-Book.woff2') format('woff2'),
+        url('BentonSans-Book.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BentonSans';
+    src: url('BentonSans-Regular.woff2') format('woff2'),
+        url('BentonSans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BentonSans';
+    src: url('BentonSans-Black.woff2') format('woff2'),
+        url('BentonSans-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BentonSans';
+    src: url('BentonSans-Bold.woff2') format('woff2'),
+        url('BentonSans-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Tiempos';
+    src: url('TiemposHeadline-Bold.woff2') format('woff2'),
+        url('TiemposHeadline-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

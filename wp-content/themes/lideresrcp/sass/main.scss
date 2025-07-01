@@ -1,0 +1,26 @@
+@import '../fonts/stylesheet.css';
+/* =========== estilos base ============== */
+@import 'utilities/variables';
+@import 'utilities/mixins';
+
+@import 'vendors/bootstrap-5.2.2/bootstrap';
+@import 'vendors/hamburgers';
+
+@import 'base/resets';
+@import 'base/fonts';
+@import 'base/helper';
+@import 'base/animations';
+@import 'base/spinners';
+@import 'base/navbar';
+
+/* =========== modulos optativos ============= */
+// @import 'base/nav-to-dropdown';
+// @import 'base/fix_bid';
+
+/* =========== estilos opcionales ============ */
+@import 'vendors/animate.min.css';
+
+/* ============= estilos custom ============== */
+@import 'modules/general';
+@import 'modules/login';
+@import 'modules/footer';

@@ -1,0 +1,96 @@
+@use "sass:math";
+
+//colors
+$primary: #007bff;
+$secondary: #6c757d;
+
+//links
+$link-color:$secondary;
+$link-decoration: underline;
+$link-hover-color: transparentize($link-color, 0.2);
+
+//responsive
+$width-xs: 0;
+$width-ssm: 415px; //mobile small
+$width-sm: 720px; //mobile
+$width-md: 1020px; //tablet
+$width-lg: 1200px; //desktopMini
+$width-xl: 1400px; //desktop
+$width-xxl: 1680px; //desktopExtraLarge
+
+/*OLD:
+$width-xs: 0;
+$width-sm: 576px; //mobile
+$width-md: 768px; //tablet
+$width-lg: 992px; //desktopMini
+$width-xl: 1300px; //desktop
+$width-xxl: 1400px; //desktopExtraLarge*/
+
+$width-container-sm:540px;
+$width-container-md:720px;
+$width-container-lg:960px;
+$width-container-xl:1240px;
+$width-container-xxl:1320px;
+
+//hamburgers
+$hamburger-width:40px;
+$hamburger-height:24px;
+$hamburger-hover-opacity:0.7;
+$hamburger-bar-height:4px;
+$hamburger-bar-color:#000;
+$hamburger-bar-border-radius:4px;
+$hamburger-bar-position-top:-10px;
+$hamburger-bar-position-bottom:-10px;
+
+//preload
+$preload-light-background: rgba(255,255,255,0.7);
+$preload-light-color: #000;
+$preload-dark-background: rgba(0,0,0,0.7);
+$preload-dark-color: #fff;
+
+// navbar search
+$navbar-search-border-color: #000;
+$navbar-search-background: #fff;
+$navbar-search-border-radius:3px;
+$navbar-search-color:#333;
+
+//forms
+$form-select-indicator-color: #343a40;
+$form-select-indicator: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='#{$form-select-indicator-color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/></svg>");
+
+$enable-smooth-scroll: true; // desactivar si se necesita un offset cuando se hace scroll (por ejemplo, si la navbar esta fixed)
+
+/* =================================================================== */
+/* ↓ Desde acá NO editar ↓ */
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: math.div($spacer, 4),
+  2: math.div($spacer, 2),
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 2.25,
+  6: $spacer * 3,
+  7: $spacer * 5,
+  8: $spacer * 7,
+  9: $spacer * 10,
+  10: $spacer * 15,
+);
+
+$grid-breakpoints: (
+  xs: $width-xs,
+  ssm: $width-ssm,
+  sm: $width-sm,
+  md: $width-md,
+  lg: $width-lg,
+  xl: $width-xl,
+  xxl: $width-xxl
+  );
+
+$container-max-widths: (
+  sm: $width-container-sm,
+  md: $width-container-md,
+  lg: $width-container-lg,
+  xl: $width-container-xl,
+  xxl: $width-container-xxl
+);

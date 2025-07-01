@@ -1,0 +1,85 @@
+:root {
+	--tc-scroll-ofset: 0; //numeros negativos suelen funcionar bien
+
+	@include media-breakpoint-up(md) {
+		--tc-scroll-ofset: 0;
+	}
+}
+
+body {
+	background: #0D1694;
+	font-family: 'BentonSans';
+	font-weight: 400;
+}
+
+.tiempos {
+	font-family: 'Tiempos';
+}
+
+.logo {
+	font-size: 47px;
+	color: #fff;
+	max-width: 270px;
+	line-height: 47px;
+	margin-bottom: 0;
+}
+
+.form-control {
+	background-color: #000519;
+	border-width: 2px;
+	font-weight: 300;
+	font-size: 14px;
+	border-radius: 10px;
+
+	&:focus,
+	&:not(:placeholder-shown){
+		background-color: #000519;
+		color: #fff;
+		border-color: #fff;
+		box-shadow: none;
+	}
+}
+
+.form-floating {
+	
+
+	&>.form-control~label {
+		color: #fff;
+		opacity: 1;
+		font-size: 14px;
+		font-weight: 300;
+		transform: translateY(-0.5rem) translateX(0.15rem);
+		transition: font-size ease-in-out .15s;
+	}
+
+	&>.form-control:focus~label,
+	&>.form-control:not(:placeholder-shown):not(:focus)~label {
+		font-size: 12px;
+	}
+
+}
+
+.btn-white{
+	@include button-variant(
+		$background:#FFFFFF,
+		$border:#FFFFFF,
+		$color: #001491);	
+	font-size:16px;
+	font-weight: 700;
+	padding:17px;
+	border-radius: 10px;
+}
+
+.btn-link{
+	font-size: 14px;
+	font-weight: 500;
+	text-decoration: none;
+	
+	&.white{
+		color:#fff;
+	}
+	
+	&.blue-lt{
+		color:#82C4FA;
+	}
+}
