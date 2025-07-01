@@ -1,0 +1,209 @@
+.compromiso {
+    margin-bottom: 40px;
+
+    &--header {
+        margin-bottom: 54px;
+
+        div {
+            font-size: 14px;
+            font-weight: 400;
+        }
+    }
+
+    &--grid {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+            "team"
+            "videos"
+            "desafio";
+
+        @include media-breakpoint-up(sm) {
+            grid-template-columns: 395px 1fr;
+            grid-template-rows: auto auto;
+            grid-template-areas:
+                "team videos"
+                "desafio videos";
+        }
+
+
+        &_team {
+            grid-area: team;
+        }
+
+        &_desafio {
+            grid-area: desafio;
+        }
+
+        &_videos {
+            grid-area: videos;
+        }
+
+        &_team,
+        &_desafio,
+        &_videos {
+            border-radius: 10px;
+            padding: 20px;
+            min-width: 0;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        &_team,
+        &_videos {
+            background: #F7F8F8;
+
+            .compromiso--grid_title {
+                font-size: 18px;
+                font-weight: 700;
+                color: #0D1694;
+                margin-bottom: 10px;
+            }
+        }
+
+        &_team,
+        &_desafio {
+            @include media-breakpoint-up(sm) {
+                width: 395px;
+            }
+        }
+
+        &_team {
+            padding: 20px 15px;
+
+            &--inner {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+            }
+        }
+
+        &_desafio {
+            background-color: #FFB56B;
+
+            .compromiso--grid_title {
+                @extend .tiempos;
+                font-size: 36px;
+                line-height: 1em;
+                color: #fff;
+                margin-bottom: 10px;
+                max-width: 300px;
+            }
+
+            &--inner {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+            }
+        }
+
+        &_videos {
+            padding: 20px 20px 40px;
+        }
+
+        &_desc {
+            font-size: 14px;
+            line-height: 1.2em;
+            font-weight: 500;
+            color: #0D1694;
+        }
+
+        &_avatars {
+            display: flex;
+            gap: 7px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 15px auto;
+            max-width: 400px;
+        }
+
+        &_slider {
+            margin: 30px -10px 0;
+            position: relative;
+
+            .slick-slide {
+                width: 255px !important;
+
+                a {
+                    display: block;
+                    border-radius: 10px;
+                    overflow: hidden;
+                    margin: 0 10px;
+
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+
+            .slick-arrow {
+                z-index: 1;
+
+                &:before {
+                    color: #0D1694;
+                    font-size: 24px;
+                }
+
+                &.slick-prev {
+                    left: 0px;
+                }
+
+                &.slick-next {
+                    right: 0px;
+                }
+            }
+
+
+            .slick-dots {
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+                text-align: center;
+                position: absolute;
+                bottom: -25px;
+                left: 0;
+                right: 0;
+                height: 10px;
+
+                >li {
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background-color: #0d1694;
+                    margin: 0 2px;
+                    display: inline-block;
+                    cursor: pointer;
+
+
+                    >button {
+                        padding: 0;
+                        width: 100%;
+                        height: 100%;
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+                }
+            }
+        }
+
+    }
+
+    &--form {
+        border-radius: 10px;
+        padding: 20px;
+        background-color: #FFB56B;
+
+        &_tag {
+            font-size: 14px;
+            font-weight: 700;
+            @extend .c-green;
+            background-color: #fff;
+            padding: 5px 9px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+    }
+}

@@ -10,6 +10,7 @@ body {
 	background: #0D1694;
 	font-family: 'BentonSans';
 	font-weight: 400;
+	color:#0D1694;
 }
 
 .tiempos {
@@ -17,26 +18,20 @@ body {
 }
 
 .form-control {
-	background-color: #000519;
 	border-width: 2px;
 	font-weight: 300;
 	font-size: 14px;
 	border-radius: 10px;
 
 	&:focus,
-	&:not(:placeholder-shown){
-		background-color: #000519;
-		color: #fff;
-		border-color: #fff;
+	&:not(:placeholder-shown) {
 		box-shadow: none;
 	}
+
 }
 
 .form-floating {
-	
-
 	&>.form-control~label {
-		color: #fff;
 		opacity: 1;
 		font-size: 14px;
 		font-weight: 300;
@@ -48,14 +43,13 @@ body {
 	&>.form-control:not(:placeholder-shown):not(:focus)~label {
 		font-size: 12px;
 	}
-
 }
 
-.c-green{
-	color:#88E783;
+.c-green {
+	color: #88E783;
 }
 
-.c-white{
+.c-white {
 	color: #fff;
 }
 
@@ -63,39 +57,54 @@ body {
 	color: #82C4FA;
 }
 
-.btn-white{
-	@include button-variant(
-		$background:#FFFFFF,
-		$border:#FFFFFF,
-		$color: #001491);	
-	font-size:16px;
+.btn-white {
+	@include button-variant($background: #FFFFFF,
+		$border: #FFFFFF,
+		$color: #001491);
+	font-size: 16px;
 	font-weight: 700;
-	padding:17px;
+	padding: 17px;
 	border-radius: 10px;
 }
 
-.btn-link{
+.btn-link {
 	font-size: 14px;
 	font-weight: 500;
 	text-decoration: none;
 }
 
-.avatar{
-	--w:66px;
+.btn-back {
+	display: inline-flex;
+	align-items: center;
+	gap: 16px;
+
+
+	&:before {
+		content: '';
+		background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0'%3F%3E%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Crect fill='none' height='256' width='256'/%3E%3Cpolyline fill='none' points='160 208 80 128 160 48' stroke='%2382c4fa' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'/%3E%3C/svg%3E");
+		width: 10px;
+		height: 15px;
+		background-size: cover;
+		display: inline-block;
+	}
+}
+
+.avatar {
+	--w: 66px;
 	border-radius: 50%;
-	width:var(--w);
-	height:var(--w);
+	width: var(--w);
+	height: var(--w);
 	background-color: #FFB56B;
-	color:#0D1694;
+	color: #0D1694;
 	position: relative;
 	font-size: calc(var(--w) * .5);
 	font-weight: 500;
 	text-transform: uppercase;
 
-	> span{
+	>span {
 		position: absolute;
-		top:50%;
-		left:50%;
+		top: 50%;
+		left: 50%;
 		transform: translate(-50%, -50%);
 	}
 

@@ -87,6 +87,8 @@ function theme_scripts()
     // WP default
     wp_enqueue_style('theme-style', get_stylesheet_uri(), array(), SCRIPTS_VERSION);
     wp_enqueue_style('theme-main-styles', get_template_directory_uri() . '/css/main.css', array(), SCRIPTS_VERSION);
+    wp_enqueue_style('slick-styles', get_template_directory_uri() . '/assets/slick-1.8.1/slick.css', array(), SCRIPTS_VERSION);
+    wp_enqueue_style('slick-theme-styles', get_template_directory_uri() . '/assets/slick-1.8.1/slick-theme.css', array(), SCRIPTS_VERSION);
 
     // ?
     wp_style_add_data('theme-style', 'rtl', 'replace');
@@ -96,6 +98,8 @@ function theme_scripts()
     // * JS
     // * This files will be included with the wp_footer wordpress function
     // ============================================================================
+    wp_enqueue_script( 'slick-script', get_template_directory_uri() . "/assets/slick-1.8.1/slick.min.js", array('jquery'), SCRIPTS_VERSION, true );
+    wp_enqueue_script( 'main-script', get_template_directory_uri() . "/js/main.js", array('jquery'), SCRIPTS_VERSION, true );
 
 
 
