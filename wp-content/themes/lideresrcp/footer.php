@@ -1,18 +1,28 @@
-<?php if (get_page_template_slug(get_the_ID()) != 'page-login.php') { ?>
+<?php if (is_user_logged_in()) { ?>
 
-<div class="footer">
-  <?php if (is_user_logged_in()) : ?>
-    <div style="text-align: center; margin-top: 40px;">
-      <a href="<?php echo esc_url(wp_logout_url(site_url('/login'))); ?>" style="color: #1a73e8; text-decoration: none; font-weight: bold;">
-        Cerrar sesión
-      </a>
+  <div class="footer">
+    <div class="container-lg">
+
+      <div class="footer--inner">
+
+        <div class="footer-links">
+
+          <a href="" class="btn btn-link c-blue-lt p-0 me-sm-3 mb-2 mb-sm-0">¿Necesitás ayuda?</a>
+
+          <a href="<?php echo esc_url(wp_logout_url(site_url('/login'))); ?>" class="btn btn-link c-blue-lt fw-300 p-0">
+            Cerrar sesión
+          </a>
+        </div>
+
+        <div class="footer-copy">
+          LideresRCP.com es una iniciativa del equipo de Cultura y Transformación de BBVA Argentina
+        </div>
+
+      </div>
+
+
     </div>
-  <?php endif; ?>
-  
-  <div class="footer-copy">
-    LideresRCP.com es una iniciativa del equipo de Cultura y Transformación de BBVA Argentina
   </div>
-</div>
 
 <?php } ?>
 

@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && is_email($_POST['email'])) {
     $subject = '🔑 Acceso a la plataforma Líderes RCP';
 
     $message = <<<HTML
-<table width="100%" cellpadding="0" cellspacing="0" border="0" align="center">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" align="center" style="font-family: Arial, sans-serif; background-color: #f7f7f7; padding: 40px;">
   <tr>
     <td align="center">
       <table width="600" cellpadding="0" cellspacing="0" border="0" style="background-color: #ffffff; border-radius: 8px; overflow: hidden;">
@@ -114,11 +114,11 @@ HTML;
           <div class="fw-500">El link de acceso fue enviado a tu e-mail</div>
           Podrás utilizarlo para ingresar durante 15 minutos.
         </div>
-        <a href="" class="btn btn-link d-block mt-3 white">Abrir correo</a>
+        <a href="" class="btn btn-link d-block mt-3 c-white">Abrir correo</a>
       </div>
     <?php } ?>
 
-    <a href="" class="btn btn-link d-block mt-3 blue-lt">¿Necesitás ayuda?</a>
+    <a href="" class="btn btn-link d-block mt-3 c-blue-lt">¿Necesitás ayuda?</a>
   </div>
 
   <div class="login-container--footer">

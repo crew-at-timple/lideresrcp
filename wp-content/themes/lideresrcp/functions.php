@@ -105,3 +105,29 @@ function theme_scripts()
     }
 }
 add_action('wp_enqueue_scripts', 'theme_scripts');
+
+
+function get_user_initials($user_id = null)
+{
+    if (! $user_id) {
+        $user_id = get_current_user_id();
+    }
+
+    $user = get_userdata($user_id);
+
+    if (! $user) {
+        return '';
+    }
+
+    $name = trim($user->display_name);
+    $parts = explode(' ', $name);
+    $initials = '';
+
+    foreach ($parts as $part) {
+        if ($part !== '') {
+            $initials .= strtoupper(mb_substr($part, 0, 1));
+        }
+    }
+
+    return $initials;
+}

@@ -1,0 +1,37 @@
+.navbar{
+    --bs-navbar-padding-y:0px;
+
+    &--inner{
+        padding:20px 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        @include media-breakpoint-up(sm){
+            border-bottom:1px solid rgba(255,255,255,0.38);
+        }
+    }
+
+    .navbar-brand{
+        img{
+            width: 65px;
+            height:auto;
+        }
+    }
+    
+    .user-logged{
+        display:flex;
+        align-items: center;
+        gap:7px;
+
+        > span{
+            font-size: 14px;
+            color:#fff;
+            font-weight:300;
+        }
+
+        .avatar{
+            --w:35px;
+        }
+    }
+}

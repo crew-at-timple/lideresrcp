@@ -16,14 +16,6 @@ body {
 	font-family: 'Tiempos';
 }
 
-.logo {
-	font-size: 47px;
-	color: #fff;
-	max-width: 270px;
-	line-height: 47px;
-	margin-bottom: 0;
-}
-
 .form-control {
 	background-color: #000519;
 	border-width: 2px;
@@ -59,6 +51,18 @@ body {
 
 }
 
+.c-green{
+	color:#88E783;
+}
+
+.c-white{
+	color: #fff;
+}
+
+.c-blue-lt {
+	color: #82C4FA;
+}
+
 .btn-white{
 	@include button-variant(
 		$background:#FFFFFF,
@@ -74,12 +78,25 @@ body {
 	font-size: 14px;
 	font-weight: 500;
 	text-decoration: none;
-	
-	&.white{
-		color:#fff;
+}
+
+.avatar{
+	--w:66px;
+	border-radius: 50%;
+	width:var(--w);
+	height:var(--w);
+	background-color: #FFB56B;
+	color:#0D1694;
+	position: relative;
+	font-size: calc(var(--w) * .5);
+	font-weight: 500;
+	text-transform: uppercase;
+
+	> span{
+		position: absolute;
+		top:50%;
+		left:50%;
+		transform: translate(-50%, -50%);
 	}
-	
-	&.blue-lt{
-		color:#82C4FA;
-	}
+
 }
