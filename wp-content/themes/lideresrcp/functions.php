@@ -107,6 +107,9 @@ function theme_scripts()
 add_action('wp_enqueue_scripts', 'theme_scripts');
 
 
+require get_template_directory() . '/inc/theme-structure.php';
+
+
 function get_user_initials($user_id = null)
 {
     if (! $user_id) {
