@@ -76,5 +76,76 @@ if( function_exists('acf_add_local_field_group') ):
         'description' => 'Campos para gestionar los miembros de un equipo.',
     ));
 
+
+    acf_add_local_field_group([
+            'key' => 'group_respuesta_equipo',
+            'title' => 'Respuesta de equipo',
+            'fields' => [
+                [
+                    'key' => 'field_nombre',
+                    'label' => 'Nombre del compromiso',
+                    'name' => 'nombre',
+                    'type' => 'textarea',
+                ],
+                [
+                    'key' => 'field_descripcion',
+                    'label' => 'Descripción del compromiso',
+                    'name' => 'descripcion',
+                    'type' => 'textarea',
+                ],
+                [
+                    'key' => 'field_cuando',
+                    'label' => '¿Cuándo?',
+                    'name' => 'cuando',
+                    'type' => 'textarea',
+                ],
+                [
+                    'key' => 'field_quien',
+                    'label' => '¿Quién o quiénes lo hacen?',
+                    'name' => 'quien',
+                    'type' => 'textarea',
+                ],
+                [
+                    'key' => 'field_que',
+                    'label' => '¿Qué debería cambiar o mejorar gracias a esta acción?',
+                    'name' => 'que',
+                    'type' => 'textarea',
+                ],
+                [
+                    'key' => 'field_foto_mural',
+                    'label' => 'Foto del mural',
+                    'name' => 'foto_mural',
+                    'type' => 'image',
+                    'return_format' => 'array',
+                    'preview_size' => 'medium',
+                    'library' => 'all',
+                ],
+                [
+                    'key' => 'field_equipo',
+                    'label' => 'Equipo',
+                    'name' => 'equipo',
+                    'type' => 'text',
+                    'readonly' => 1,
+                    'wrapper' => [
+                        'width' => '',
+                        'class' => '',
+                        'id' => '',
+                    ],
+                ],
+            ],
+            'location' => [
+                [
+                    [
+                        'param' => 'post_type',
+                        'operator' => '==',
+                        'value' => 'respuestas',
+                    ],
+                ],
+            ],
+            'position' => 'normal',
+            'style' => 'default',
+            'active' => true,
+        ]);
+
 endif;
 ?>

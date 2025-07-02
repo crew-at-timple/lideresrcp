@@ -21,7 +21,7 @@
 
     $(document).ready(function() {
         // Selecciona el botón por su clase y añade un 'click' listener
-        $('.btn-back').on('click', function() {
+        $('.btn-back-js').on('click', function() {
             history.back(); // Esto hace que el navegador retroceda una página en el historial
         });
     });
@@ -38,6 +38,21 @@
         var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
             return new bootstrap.Tooltip(tooltipTriggerEl);
         });
+    });
+
+    /* Manejo del formulario */
+
+    $('form').on('submit', function(e) {
+        var $form = $(this);
+        var $submit = $form.find('input[type="submit"]');
+
+        if ($submit.prop('disabled')) {
+            e.preventDefault();
+            return false; // ya se envió
+        }
+
+        $submit.prop('disabled', true);
+        $submit.val('Enviando...');
     });
 
 })(jQuery);

@@ -97,6 +97,7 @@ add_action('wp_enqueue_scripts', 'theme_scripts');
 require get_template_directory() . '/inc/theme-structure.php';
 require get_template_directory() . '/inc/theme-acf.php';
 require get_template_directory() . '/inc/theme-teams-functions.php';
+require get_template_directory() . '/inc/theme-functions-tareas.php';
 
 
 function get_user_initials($user_id = null)

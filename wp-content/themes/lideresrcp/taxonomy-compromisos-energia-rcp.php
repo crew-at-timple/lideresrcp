@@ -7,7 +7,7 @@ get_header();
     <div class="container-lg">
 
         <div class="mt-3 mb-4">
-            <button class="btn btn-link btn-back c-blue-lt p-0">Volver atras</button>
+            <a href="<?php echo get_home_url(); ?>" class="btn btn-link btn-back c-blue-lt p-0">Volver atras</a>
         </div>
 
         <div class="compromiso--header text-center text-sm-start">
@@ -27,8 +27,6 @@ get_header();
             if ($GLOBALS['current_user_team_id']) :
                 // Obtiene todos los detalles del equipo (título, miembros, roles)
                 $team_details = get_team_details_by_id($GLOBALS['current_user_team_id']);
-
-                print_r($team_details);
 
                 if ($team_details && !empty($team_details['miembros'])) :
             ?>
