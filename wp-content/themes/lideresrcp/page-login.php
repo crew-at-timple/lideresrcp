@@ -118,13 +118,13 @@ HTML;
       </div>
     <?php } ?>
 
-    <a href="" class="btn btn-link d-block mt-3 c-blue-lt">¿Necesitás ayuda?</a>
+    <a href="#" class="btn btn-link d-block mt-3 c-blue-lt" data-bs-toggle="modal" data-bs-target="#helpModal">¿Necesitás ayuda?</a>
   </div>
 
   <div class="login-container--footer">
 
     <div class="footer-copy">
-      LideresRCP.com es una iniciativa del equipo de Cultura y Transformación de BBVA Argentina
+      LideresRCP.com es una iniciativa del equipo de Talento y Cultura de BBVA Argentina.
     </div>
 
   </div>

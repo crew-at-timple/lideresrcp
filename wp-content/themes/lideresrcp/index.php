@@ -20,32 +20,51 @@ if (is_user_logged_in()) {
       <div class="home--categories">
         <div class="home--categories_title">Selecciona tu actividad</div>
         <div class="row g-3">
-          <div class="col-md-6">
-            <a href="" class="capsule-tax inprogress">
-              <div class="capsule-tax--content">
-                <span class="capsule-tax--tag">En progreso</span>
-                <div class="mt-auto">
-                  <div class="capsule-tax--title">EnergíaRCP</div>
-                  <div class="capsule-tax--desc">Gerentes de sucursales y áreas que prestan servicio a la red</div>
+
+            <?php 
+
+            $term_slug = 'energia-rcp';
+            $taxonomy_name = 'compromisos';
+            $term = get_term_by( 'slug', $term_slug, $taxonomy_name );
+
+            if ( $term && ! is_wp_error( $term ) ) {
+              $term_link = get_term_link( $term );
+              if ( ! is_wp_error( $term_link ) ) {
+            ?>
+
+            <div class="col-md-6">
+              
+              <a href="<?php echo $term_link; ?>" class="capsule-tax inprogress">
+                <div class="capsule-tax--content">
+                  <span class="capsule-tax--tag">En progreso</span>
+                  <div class="mt-auto">
+                    <div class="capsule-tax--title mb-2">EnergíaRCP</div>
+                    <div class="capsule-tax--desc">Gerentes de sucursales y managers que prestan servicio a la red</div>
+                  </div>
                 </div>
-              </div>
-              <div class="capsule-tax--image">
-                <img src="<?php echo get_template_directory_uri(); ?>/temp/tax-img.png">
-              </div>
-            </a>
-          </div>
+                <div class="capsule-tax--image">
+                  <img src="<?php echo get_template_directory_uri(); ?>/temp/tax-img.png">
+                </div>
+              </a>
+
+
+            </div>
+
+          <?php }
+            }
+          ?>
   
           <div class="col-md-6">
             <a href="" class="capsule-tax disabled">
               <div class="capsule-tax--content">
                 <span class="capsule-tax--tag"></span>
                 <div class="mt-auto">
-                  <div class="capsule-tax--title">Supermentores</div>
-                  <div class="capsule-tax--desc">Proximamente</div>
+                  <div class="capsule-tax--title mb-2">Supermentores</div>
+                  <div class="capsule-tax--desc">Próximamente</div>
                 </div>
               </div>
               <div class="capsule-tax--image">
-                <img src="<?php echo get_template_directory_uri(); ?>/temp/tax-img.png">
+                <img src="<?php echo get_template_directory_uri(); ?>/temp/tax-img-placeholder.png">
               </div>
             </a>
           </div>

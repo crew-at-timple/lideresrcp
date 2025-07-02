@@ -5,7 +5,7 @@
         margin-bottom: 54px;
 
         div {
-            font-size: 14px;
+            font-size: 16px;
             font-weight: 400;
         }
     }
@@ -17,15 +17,15 @@
         grid-template-rows: auto auto auto;
         grid-template-areas:
             "team"
-            "videos"
-            "desafio";
+            "desafio"
+            "videos";
 
         @include media-breakpoint-up(sm) {
             grid-template-columns: 395px 1fr;
             grid-template-rows: auto auto;
             grid-template-areas:
-                "team videos"
-                "desafio videos";
+                "desafio videos"
+                "team videos";
         }
 
 
@@ -104,7 +104,7 @@
         }
 
         &_desc {
-            font-size: 14px;
+            font-size: 16px;
             line-height: 1.2em;
             font-weight: 500;
             color: #0D1694;
@@ -205,5 +205,35 @@
             border-radius: 5px;
             display: inline-block;
         }
+
+        .accordion {
+            background-color: transparent;
+        }
+
+        .accordion-button  {
+           color: #0d1694;
+            background-color: #ffb56b !important;
+            padding-left: 0;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .accordion-body {
+                padding: 0;
+                color: #0d1694;
+                padding-top: 17px;
+        }
+
+        .accordion-item {
+            border: 0;
+        }
+
+        .accordion-collapse {
+            background: #ffb56b;
+        }
+
     }
 }
+
+
+
