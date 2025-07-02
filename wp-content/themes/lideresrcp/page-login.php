@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && is_email($_POST['email'])) {
       <table width="600" cellpadding="0" cellspacing="0" border="0" style="background-color: #ffffff; border-radius: 8px; overflow: hidden;">
         <tr>
           <td style="padding: 40px 20px 20px 20px;" align="center">
-            <img src="{$logo_url}" alt="Logo" style="max-width: 200px;">
+            <img src="{$logo_url}" alt="Logo" style="max-width: 184px;">
           </td>
         </tr>
         <tr>
@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && is_email($_POST['email'])) {
             <p style="color: #555; font-size: 16px;">
               Hacé clic en el botón para ingresar a tu cuenta. Este enlace es válido por 15 minutos.
             </p>
-            <a href="{$login_url}" style="display: inline-block; background-color: #1a73e8; color: #ffffff; text-decoration: none; padding: 12px 24px; border-radius: 4px; font-weight: bold; margin-top: 20px;">
+            <a href="{$login_url}" style="display: inline-block; background-color: #0d1694; color: #ffffff; text-decoration: none; padding: 12px 24px; border-radius: 4px; font-weight: bold; margin-top: 20px;">
               Ingresar al sitio
             </a>
             <p style="margin-top: 30px; color: #777; font-size: 14px;">
