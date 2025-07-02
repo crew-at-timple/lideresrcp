@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && is_email($_POST['email'])) {
     <td align="center">
       <table width="600" cellpadding="0" cellspacing="0" border="0" style="background-color: #ffffff; border-radius: 8px; overflow: hidden;">
         <tr>
-          <td style="padding: 40px 20px 20px 20px;" align="center">
+          <td style="padding: 40px 20px 0 20px;" align="center">
             <img src="{$logo_url}" alt="Logo" style="max-width: 100%;">
           </td>
         </tr>
