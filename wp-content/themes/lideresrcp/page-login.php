@@ -4,7 +4,7 @@ Template Name: Custom Login Page
 */
 get_header();
 
-$logo_url = get_template_directory_uri() . '/RadicalClientPerspective.png';
+$logo_url = get_template_directory_uri() . '/images/ico-send-white.png';
 $mensaje = '';
 $show_confirmation = false;
 

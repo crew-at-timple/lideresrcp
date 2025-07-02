@@ -37,6 +37,10 @@ body {
 		font-weight: 300;
 		transform: translateY(-0.5rem) translateX(0.15rem);
 		transition: font-size ease-in-out .15s;
+
+		&:after{
+			content:none!important;
+		}
 	}
 
 	&>.form-control:focus~label,
