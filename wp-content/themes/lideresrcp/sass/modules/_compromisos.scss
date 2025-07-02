@@ -210,8 +210,8 @@
             background-color: transparent;
         }
 
-        .accordion-button  {
-           color: #0d1694;
+        .accordion-button {
+            color: #0d1694;
             background-color: #ffb56b !important;
             padding-left: 0;
             font-weight: 600;
@@ -219,9 +219,9 @@
         }
 
         .accordion-body {
-                padding: 0;
-                color: #0d1694;
-                padding-top: 17px;
+            padding: 0;
+            color: #0d1694;
+            padding-top: 17px;
         }
 
         .accordion-item {
@@ -238,15 +238,84 @@
 
         max-width: 500px;
         margin: auto;
-        
+
         img {
             max-width: 100px;
             height: auto;
         }
 
     }
-    
+
+    &--videos {
+        background-color: #F7F8F8;
+        border-radius: 10px;
+        padding: 20px;
+
+        &_video {
+            border-radius: 10px;
+            overflow: hidden;
+
+            .ratio {
+                --bs-aspect-ratio: calc(16 / 9 * 100%);
+            }
+        }
+
+        .col-fixed {
+            @include make-col();
+
+            @include media-breakpoint-up(sm) {
+                max-width: 395px;
+            }
+        }
+
+        .already-completed {
+            text-align: center;
+
+            .avatars {
+                display: flex;
+                justify-content: center;
+                gap: 3px;
+
+                .avatar {
+                    --w: 30px;
+                }
+            }
+        }
+
+
+        .form--wrapper {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+
+            form {
+                flex:1;
+                display: flex;
+                flex-direction: column;
+
+                .form-floating{
+                    flex:1;
+                }
+
+                textarea.form-control {
+                    height:100%;
+
+                    @include media-breakpoint-down(sm) {
+                        height: auto;
+                        min-height: 411px;
+                    }
+                }
+
+                .btn{
+                    @include media-breakpoint-down(sm){
+                        display:block;
+                        width:100%;
+                    }
+                }
+            }
+        }
+
+
+    }
+
 }
-
-
-

@@ -16,6 +16,13 @@ body {
 .tiempos {
 	font-family: 'Tiempos';
 }
+.fs-14 {
+	font-size: 14px;
+}
+
+.fs-18{
+	font-size: 18px;
+}
 
 .form-control {
 	border-width: 2px;
@@ -46,6 +53,17 @@ body {
 	&>.form-control:focus~label,
 	&>.form-control:not(:placeholder-shown):not(:focus)~label {
 		font-size: 12px;
+	}
+}
+
+.avatar-floating{
+	position: relative;
+	.avatar{
+		--w: 35px;
+		position: absolute;
+		bottom:0;
+		right:0;
+		transform: translate(30%, 30%);
 	}
 }
 

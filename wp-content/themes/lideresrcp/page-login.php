@@ -103,7 +103,7 @@ HTML;
           <label for="email">Ingresá tu e-mail</label>
         </div>
 
-        <button type="submit" class="btn btn-white w-100">Recibir link de acceso</button>
+        <button type="submit" class="btn btn-animation btn-white w-100">Recibir link de acceso</button>
       </form>
 
     <?php } else { ?>
