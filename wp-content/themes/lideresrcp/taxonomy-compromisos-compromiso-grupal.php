@@ -167,7 +167,7 @@ get_header();
 
                 <!-- Botón de envío -->
                 <div class="text-left mt-4">
-                    <input type="submit" value="Enviar nuestro compromiso grupal" class="btn btn-white">
+                    <button type="submit" class="btn btn-white">Enviar nuestro compromiso grupal</button>
                 </div>
 
                 <?php wp_nonce_field('guardar_formulario_respuesta', 'formulario_respuesta_nonce'); ?>
