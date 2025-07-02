@@ -10,7 +10,7 @@ body {
 	background: #0D1694;
 	font-family: 'BentonSans';
 	font-weight: 400;
-	color:#0D1694;
+	color: #0D1694;
 }
 
 .tiempos {
@@ -55,38 +55,6 @@ body {
 
 .c-blue-lt {
 	color: #82C4FA;
-}
-
-.btn-white {
-	@include button-variant($background: #FFFFFF,
-		$border: #FFFFFF,
-		$color: #001491);
-	font-size: 16px;
-	font-weight: 700;
-	padding: 17px;
-	border-radius: 10px;
-}
-
-.btn-link {
-	font-size: 14px;
-	font-weight: 500;
-	text-decoration: none;
-}
-
-.btn-back {
-	display: inline-flex;
-	align-items: center;
-	gap: 16px;
-
-
-	&:before {
-		content: '';
-		background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0'%3F%3E%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Crect fill='none' height='256' width='256'/%3E%3Cpolyline fill='none' points='160 208 80 128 160 48' stroke='%2382c4fa' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'/%3E%3C/svg%3E");
-		width: 10px;
-		height: 15px;
-		background-size: cover;
-		display: inline-block;
-	}
 }
 
 .avatar {
