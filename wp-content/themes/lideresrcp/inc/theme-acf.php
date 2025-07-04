@@ -112,15 +112,6 @@ if( function_exists('acf_add_local_field_group') ):
                     'type' => 'textarea',
                 ],
                 [
-                    'key' => 'field_foto_mural',
-                    'label' => 'Foto del mural',
-                    'name' => 'foto_mural',
-                    'type' => 'image',
-                    'return_format' => 'array',
-                    'preview_size' => 'medium',
-                    'library' => 'all',
-                ],
-                [
                     'key' => 'field_equipo',
                     'label' => 'Equipo',
                     'name' => 'equipo',
@@ -132,6 +123,34 @@ if( function_exists('acf_add_local_field_group') ):
                         'id' => '',
                     ],
                 ],
+            ],
+            'location' => [
+                [
+                    [
+                        'param' => 'post_type',
+                        'operator' => '==',
+                        'value' => 'respuestas',
+                    ],
+                ],
+            ],
+            'position' => 'normal',
+            'style' => 'default',
+            'active' => true,
+        ]);
+
+    acf_add_local_field_group([
+            'key' => 'group_respuesta_individual',
+            'title' => 'Respuesta Individuales',
+            'fields' => [
+                [
+                    'key' => 'field_imagen',
+                    'label' => 'Imagen',
+                    'name' => 'Imagen',
+                    'type' => 'image',
+                    'return_format' => 'array',
+                    'preview_size' => 'medium',
+                    'library' => 'all',
+                ]
             ],
             'location' => [
                 [
@@ -165,6 +184,25 @@ if( function_exists('acf_add_local_field_group') ):
                     'id' => '',
                 ),
                 'return_format' => 'array',
+                'library' => 'all',
+                'min_size' => '',
+                'max_size' => '',
+                'mime_types' => '',
+            ),
+            array(
+                'key' => 'field_686542cd0c378',
+                'label' => 'Video Hover',
+                'name' => 'video_cut',
+                'type' => 'file',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'return_format' => 'url',
                 'library' => 'all',
                 'min_size' => '',
                 'max_size' => '',

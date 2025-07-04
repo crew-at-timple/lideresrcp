@@ -102,7 +102,7 @@ function registrar_post_type_respuestas() {
         'label'                 => __( 'Respuesta', 'text_domain' ),
         'description'           => __( 'Contenido relacionado con las respuestas', 'text_domain' ),
         'labels'                => $labels,
-        'supports'              => array( 'title', 'editor', 'thumbnail' ),
+        'supports'              => array( 'title', 'editor', 'author'),
         'hierarchical'          => false,
         'public'                => true,
         'show_ui'               => true,

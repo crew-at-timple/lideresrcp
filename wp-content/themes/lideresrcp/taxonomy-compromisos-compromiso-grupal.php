@@ -77,43 +77,8 @@ get_header();
 
                                 </div>
                             </div>
-<<<<<<< HEAD
 
-                            <!-- Quién lo hace -->
-                            <div class="col-lg-6">
-                                
-                                
-                                <strong>c. Próxima entrega</strong>
-                                <p><i>La próxima reunión virtual</i></p>
-                                <div class="form-floating mb-4">
-                                    <textarea disabled required class="form-control" placeholder="¿Cuándo?" id="cuando" name="cuando" style="height: 80px;">⏰¡15 días desde hoy!</textarea>
-                                    <label for="cuando">¿Cuándo?</label>
-                                </div>
 
-                                <strong>c. ¿Quién o quiénes lo hacen?</strong>
-                                <p><i>Ejemplo: “Lucía”, “Equipo de atención”, “Juan y Romina”</i></p>
-                                <div class="form-floating">
-                                    <textarea required class="form-control" placeholder="¿Quién lo hace?" id="quien" name="quien" style="height: 140px;"></textarea>
-                                    <label for="quien">¿Quién lo hace?</label>
-                                </div>
-
-                                
-                            </div>
-
-                            <!-- Objetivo -->
-                            <div class="col-12">
-
-                                <strong>d. ¿Qué debería cambiar o mejorar gracias a esta acción?</strong>
-                                    <p><i>Ejemplo: “Obtener insights sobre puntos de dolor en la experiencia”</i></p>
-                                    <div class="form-floating">
-                                        <textarea required class="form-control" placeholder="¿Qué esperamos con cada acción?" name="que" id="que" name="que" style="height: 140px;"></textarea>
-                                        <label for="que">¿Qué esperamos con cada acción?</label>
-                                </div>
-                            
-                            </div>
-
-=======
->>>>>>> 0475ff1eb46ff115dc0d3cbc45afe8138fef8dc0
                         </div>
 
                         <!-- Paso 2 -->
@@ -150,7 +115,7 @@ get_header();
                                             </div>
 
                                             <strong>b. Describan la acción concreta que van a llevar adelante.</strong>
-                                            <p><i>Ejemplo: “Enviar una encuesta breve a clientes recientes”</i></p>
+                                            <p><i>Ejemplo: “Enviar una encuesta breve a clientes recientes”.</i></p>
                                             <div class="form-floating mb-4">
                                                 <textarea required class="form-control" placeholder="Descripción del compromiso" name="descripcion" id="descripcion" style="height: 140px;"></textarea>
                                                 <label for="descripcion">Descripción del compromiso</label>
@@ -165,8 +130,8 @@ get_header();
                                         <div class="col-lg-6">
 
 
-                                            <strong>c. Deadline</strong>
-                                            <p><i>El deadline es la próxima reunión virtual</i></p>
+                                            <strong>c. Próxima entrega</strong>
+                                            <p><i>La próxima entrega será en la reunión virtual.</i></p>
                                             <div class="form-floating mb-4">
                                                 <textarea disabled required class="form-control" placeholder="¿Cuándo?" id="cuando" name="cuando" style="height: 80px;">⏰¡15 días desde hoy!</textarea>
                                                 <label for="cuando">¿Cuándo?</label>
@@ -186,7 +151,7 @@ get_header();
                                         <div class="col-12">
 
                                             <strong>d. ¿Qué debería cambiar o mejorar gracias a esta acción?</strong>
-                                            <p><i>Ejemplo: “Obtener insights sobre puntos de dolor en la experiencia”</i></p>
+                                            <p><i>Ejemplo: “Obtener insights sobre puntos de dolor en la experiencia”.</i></p>
                                             <div class="form-floating">
                                                 <textarea required class="form-control" placeholder="¿Qué esperamos con cada acción?" name="que" id="que" name="que" style="height: 140px;"></textarea>
                                                 <label for="que">¿Qué esperamos con cada acción?</label>
@@ -207,15 +172,8 @@ get_header();
                         <button type="submit" class="btn btn-animation btn-white">Enviar nuestro compromiso grupal</button>
                     </div>
 
-<<<<<<< HEAD
-                <!-- Botón de envío -->
-                <div class="text-left mt-4">
-                    <button type="submit" class="btn btn-white btn-submit">Enviar nuestro compromiso grupal</button>
-                </div>
-=======
                     <?php wp_nonce_field('guardar_formulario_respuesta', 'formulario_respuesta_nonce'); ?>
-                    <input type="hidden" name="accion_formulario" value="1">
->>>>>>> 0475ff1eb46ff115dc0d3cbc45afe8138fef8dc0
+                    <input type="hidden" name="accion_formulario_grupal" value="1">
 
                 </form>
 
@@ -229,13 +187,8 @@ get_header();
                         ¡Compromiso enviado!
                     </h3>
 
-<<<<<<< HEAD
-                    <p>Tiene <strong>2 semanas</strong> para aplicar el compromiso. <br/>
-                    En la próxima reunión grupal cada miembros del grupo deberá subir un <strong>resumen de como le fue y una foto o imagen que muestre los resultados</strong>.</p>
-=======
-                    <p>Tiene <strong>2 semanas</strong> para aplicar su compromiso. <br />
+                    <p>Tienes <strong>2 semanas</strong> para aplicar su compromiso. <br />
                         En la próxima reunión grupal cada miembros del grupo deberá subir un resumen de como le fue y una foto o imagen que muestre los resultados.</p>
->>>>>>> 0475ff1eb46ff115dc0d3cbc45afe8138fef8dc0
 
                 </div>
 

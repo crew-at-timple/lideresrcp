@@ -75,14 +75,14 @@ get_header();
                     <div class="compromiso--grid_desafio">
                         <div class="compromiso--grid_desafio--inner">
 
-                    <?php if(!tarea_existe_para_equipo_y_term($GLOBALS['current_user_team_id'], "compromiso-grupal")){ ?>
+                            <?php if(!tarea_existe_para_equipo_y_term($GLOBALS['current_user_team_id'], "compromiso-grupal")){ ?>
 
-                    <div class="compromiso--grid_title">Compromiso Grupal RCP</div>
-                    <div class="compromiso--grid_desc">Managers, en equipo, tomamos el compromiso de aplicar la visión radical de cliente en aspectos claves del negocio</div>
+                                <div class="compromiso--grid_title">Compromiso Grupal RCP</div>
+                                <div class="compromiso--grid_desc">Managers, en equipo, tomamos el compromiso de aplicar la visión radical de cliente en aspectos claves del negocio</div>
 
-                            <div class="mt-auto">
-                                <a href="<?php echo $term_link; ?>" class="btn btn-animation btn-white d-block w-100 mt-4">Completar tu compromiso</a>
-                            </div>
+                                <div class="mt-auto">
+                                    <a href="<?php echo $term_link; ?>" class="btn btn-animation btn-white d-block w-100 mt-4">Completar tu compromiso</a>
+                                </div>
                         </div>
                     </div>
 
@@ -101,10 +101,12 @@ get_header();
 
                         </div>
 
-                    <?php } ?>
+                        </div>
+                    </div>
 
-                </div>
-            </div>
+
+
+                    <?php } ?>
 
             <?php }
             }
@@ -127,12 +129,15 @@ get_header();
 
                     <div class="compromiso--grid_slider">
                         <?php foreach ($subterms as $subterm) {
-                            $video = get_field('video', 'term_' . $subterm->term_id);
-                            $image = get_the_post_thumbnail_url($video, 'full');
+                            $videoID = get_field('video', 'term_' . $subterm->term_id);
+                            $video_cut = get_field('video_cut', $videoID);
+                            $image = get_the_post_thumbnail_url($videoID, 'full');
                         ?>
                             <div>
                                 <a href="<?php echo get_term_link($subterm->term_id, 'compromisos') ?>">
-                                    <img src="<?php echo $image; ?>" alt="<?php echo $subterm->name; ?>">
+                                        <video class="video-hover" muted loop preload="none" poster="<?php echo $image; ?>">
+                                            <source src="<?php echo $video_cut; ?>" type="video/mp4">
+                                        </video>
                                 </a>
                             </div>
                         <?php } ?>
@@ -141,6 +146,8 @@ get_header();
                 </div>
 
             <?php } ?>
+
+            </div>
 
         </div>
 

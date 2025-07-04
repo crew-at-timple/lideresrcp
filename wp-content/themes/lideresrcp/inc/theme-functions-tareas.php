@@ -3,7 +3,7 @@
 add_action('init', function () {
     if (
         $_SERVER['REQUEST_METHOD'] === 'POST' &&
-        isset($_POST['accion_formulario']) &&
+        isset($_POST['accion_formulario_grupal']) &&
         isset($_POST['formulario_respuesta_nonce']) &&
         wp_verify_nonce($_POST['formulario_respuesta_nonce'], 'guardar_formulario_respuesta') &&
         is_user_logged_in()
@@ -20,7 +20,7 @@ add_action('init', function () {
         $post_id = wp_insert_post([
             'post_type'   => 'respuestas',
             'post_status' => 'publish',
-            'post_title'  => 'Respuesta de ' . wp_get_current_user()->display_name,
+            'post_title'  => 'Respuesta de ' . $equipo_id . "("  . wp_get_current_user()->display_name . ")",
             'post_author' => $current_user_id,
         ]);
 
@@ -43,7 +43,53 @@ add_action('init', function () {
                 require_once ABSPATH . 'wp-admin/includes/file.php';
                 $uploaded = media_handle_upload('fotoMural', $post_id);
                 if (!is_wp_error($uploaded)) {
-                    update_field('foto_mural', $uploaded, $post_id);
+                    update_field('imagen', $uploaded, $post_id);
+                }
+            }
+
+            wp_redirect(add_query_arg('exito', 1, get_permalink()));
+            exit;
+        }
+    }
+});
+
+
+
+
+add_action('init', function () {
+    if (
+        $_SERVER['REQUEST_METHOD'] === 'POST' &&
+        isset($_POST['accion_formulario_algunavez']) &&
+        isset($_POST['formulario_respuesta_nonce']) &&
+        wp_verify_nonce($_POST['formulario_respuesta_nonce'], 'guardar_formulario_respuesta') &&
+        is_user_logged_in()
+    ) {
+        $current_user_id = get_current_user_id();
+
+        $descripcion = sanitize_textarea_field($_POST['anecdota'] ?? '');
+        $subvideo = sanitize_textarea_field($_POST['subvideo'] ?? '');
+        
+        $post_id = wp_insert_post([
+            'post_type'   => 'respuestas',
+            'post_status' => 'publish',
+            'post_title'  => 'Alguna Vez te pasó de ' . wp_get_current_user()->display_name,
+            'post_content'  => $descripcion,
+            'post_author' => $current_user_id,
+        ]);
+
+        if ($post_id && !is_wp_error($post_id)) {
+
+            wp_set_object_terms($post_id,  ['videos', $subvideo], 'compromisos', false);
+
+            require_once ABSPATH . 'wp-admin/includes/image.php';
+            require_once ABSPATH . 'wp-admin/includes/file.php';
+            require_once ABSPATH . 'wp-admin/includes/media.php';
+
+            if (!empty($_FILES['imagen']['name'])) {
+                require_once ABSPATH . 'wp-admin/includes/file.php';
+                $uploaded = media_handle_upload('imagen', $post_id);
+                if (!is_wp_error($uploaded)) {
+                    update_field('imagen', $uploaded, $post_id);
                 }
             }
 
@@ -69,6 +115,27 @@ function tarea_existe_para_equipo_y_term($equipo_id, $term_slug) {
             ]
         ],
         'tax_query' => [
+            [
+                'taxonomy' => 'compromisos',
+                'field'    => 'slug',
+                'terms'    => $term_slug,
+            ]
+        ],
+        'fields' => 'ids',
+    ]);
+
+    return !empty($query->posts);
+}
+
+
+
+
+function tarea_existe_para_usuario_y_term($user_id, $term_slug) {
+    $query = new WP_Query([
+        'post_type'      => 'respuestas',
+        'posts_per_page' => 1,
+        'author'         => $user_id,
+        'tax_query'      => [
             [
                 'taxonomy' => 'compromisos',
                 'field'    => 'slug',
