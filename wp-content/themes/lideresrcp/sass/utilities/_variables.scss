@@ -14,6 +14,7 @@ $width-xs: 0;
 $width-ssm: 415px; //mobile small
 $width-sm: 720px; //mobile
 $width-md: 870px; //tablet
+$width-mdx: 1120px; //tablet
 $width-lg: 1220px; //desktopMini
 $width-xl: 1400px; //desktop
 $width-xxl: 1680px; //desktopExtraLarge
@@ -31,6 +32,7 @@ $width-container-md:720px;
 $width-container-lg:1220px;
 $width-container-xl:1220px;
 $width-container-xxl:1220px;
+
 
 //hamburgers
 $hamburger-width:40px;
@@ -82,12 +84,13 @@ $grid-breakpoints: (
   ssm: $width-ssm,
   sm: $width-sm,
   md: $width-md,
+  mdx: $width-mdx,
   lg: $width-lg,
   xl: $width-xl,
   xxl: $width-xxl
   );
 
-$container-max-widths: (
+$container-max-widths:  (
   sm: $width-container-sm,
   md: $width-container-md,
   lg: $width-container-lg,

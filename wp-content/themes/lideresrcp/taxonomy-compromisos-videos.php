@@ -273,13 +273,13 @@ get_header();
                         <div class="col-12 col-sm">
                             <div class="row g-4" data-masonry='{"percentPosition": true }'>
                                 <!-- repetir esto -->
-                                <div class="col-12 col-lg-6">
+                                <div class="col-12 col-mdx-6">
                                     <?php
                                     include(locate_template(array('template-parts/capsule-videos.php'), false, false));
                                     ?>
                                 </div>
                                 <!-- //end repetir esto -->
-                                <div class="col-12 col-lg-6">
+                                <div class="col-12 col-mdx-6">
                                     <div class="capsule-videos">
                                         <div class="capsule-videos--header mb-3">
                                             <div class="fs-14 fw-500 mb-2">¿Alguna vez te paso?</div>
@@ -320,7 +320,7 @@ get_header();
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12 col-lg-6">
+                                <div class="col-12 col-mdx-6">
                                     <?php
                                     include(locate_template(array('template-parts/capsule-videos.php'), false, false));
                                     ?>
@@ -340,13 +340,13 @@ get_header();
 
                     <div class="row g-4" data-masonry='{"percentPosition": true }'>
                         <!-- repetir esto -->
-                        <div class="col-12 col-sm-4">
+                        <div class="col-12 col-sm-6 col-mdx-4">
                             <?php
                             include(locate_template(array('template-parts/capsule-videos.php'), false, false));
                             ?>
                         </div>
                         <!-- //end repetir esto -->
-                        <div class="col-12 col-sm-4">
+                        <div class="col-12 col-sm-6 col-mdx-4">
                             <div class="capsule-videos">
                                 <div class="capsule-videos--header mb-3">
                                     <div class="fs-14 fw-500 mb-2">¿Alguna vez te paso?</div>
@@ -387,22 +387,22 @@ get_header();
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-sm-4">
+                        <div class="col-12 col-sm-6 col-mdx-4">
                             <?php
                             include(locate_template(array('template-parts/capsule-videos.php'), false, false));
                             ?>
                         </div>
-                        <div class="col-12 col-sm-4">
+                        <div class="col-12 col-sm-6 col-mdx-4">
                             <?php
                             include(locate_template(array('template-parts/capsule-videos.php'), false, false));
                             ?>
                         </div>
-                        <div class="col-12 col-sm-4">
+                        <div class="col-12 col-sm-6 col-mdx-4">
                             <?php
                             include(locate_template(array('template-parts/capsule-videos.php'), false, false));
                             ?>
                         </div>
-                        <div class="col-12 col-sm-4">
+                        <div class="col-12 col-sm-6 col-mdx-4">
                             <?php
                             include(locate_template(array('template-parts/capsule-videos.php'), false, false));
                             ?>
