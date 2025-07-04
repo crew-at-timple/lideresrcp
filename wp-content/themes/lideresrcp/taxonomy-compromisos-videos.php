@@ -51,7 +51,7 @@ get_header();
                         <?php
                         if ($current_term->parent) {
                             if (!is_wp_error($parent)) { ?>
-                                <div class="fs-16 mb-1"><?php echo esc_html($parent->name); ?></div>
+                                <div class="fs-16 fw-700 mb-1"><?php echo esc_html($parent->name); ?></div>
                         <?php }
                         }
                         ?>
@@ -92,17 +92,39 @@ get_header();
                                     <div class="fs-18 fw-700 mb-1">
                                         Compartí tu anécdota
                                     </div>
-                                    <div class="fs-14 fw-300">
-                                        Ya 20 líderesRCP compartieron sus historias, compartí la tuya y conócelas las de tus compañeros.
+                                    <div class="fs-16 ">
+
+                                        <?php 
+                                        
+                                        $tareasCargadas = obtener_autores_y_cantidad_por_term('videos');
+                                        $autores = $tareasCargadas['autores'];
+                                        $total = $tareasCargadas['cantidad'];
+                                        
+                                        if($total > 5){ ?> 
+
+                                            Ya <?php echo $total ?> managers compartieron sus historias. Compartí la tuya y conócelas las de tus compañeros.
+                                            
+                                        <? } else if($total < 5 && $total > 0) { ?>
+
+                                            Ya hay managers que compartieron sus historias. Compartí la tuya y conócelas las de tus compañeros.
+
+                                        <?php } else { ?>
+
+                                            Se el primero en compartír una historial real.
+
+                                        <?php } ?>
+                                    
                                     </div>
                                 </div>
 
                                 <div class="form-floating mb-4 avatar-floating">
-                                    <textarea required class="form-control" placeholder="Eran las 17.52 …" name="anecdota" id="anecdota"></textarea>
-                                    <label for="anecdota">Eran las 17.52 …</label>
+                                    <textarea required class="form-control" placeholder="Por ejemplo: <?php echo obtener_inicio_aleatorio_anecdota(); ?>" name="anecdota" id="anecdota"></textarea>
+                                    <label for="anecdota">Por ejemplo: <?php echo obtener_inicio_aleatorio_anecdota(); ?></label>
+                                    <?php if ($total > 0){ ?>
                                     <div class="avatar" data-bs-toggle="tooltip" title="">
                                         <span><?php echo get_user_initials(); ?></span>
                                     </div>
+                                    <?php } ?>
                                 </div>
 
                                 <div class="mb-3">
@@ -114,35 +136,90 @@ get_header();
                                 <input type="hidden" name="accion_formulario_algunavez" value="1">
                                 <input type="hidden" name="subvideo" value="<?php echo $current_term->slug; ?>">
 
-                                <!-- Botón de envío -->
-                                <div class="text-left">
-                                    <button type="submit" class="btn btn-animation btn-blue">Enviar</button>
+
+                                <div class="d-flex justify-content-between">
+
+                                    <!-- Botón de envío -->
+                                    <div class="text-left">
+                                        <button type="submit" class="btn btn-animation btn-blue">Enviar</button>
+                                    </div>
+
+
+                                    <?php if ($total === 0): ?>
+                                    <div class="already-completed">
+
+                                    <div class="avatars d-flex justify-content-end">
+
+                                        <?php
+
+                                        $user = get_userdata(get_current_user_id());
+
+                                        $initials = get_user_initials(get_current_user_id());
+                                        $email = esc_attr($user->user_email);
+                                        ?>
+                                        <div class="avatar" data-bs-toggle="tooltip" title="<?php echo $email; ?>">
+                                            <span><?php echo esc_html($initials); ?></span>
+                                        </div>
+
+
+                                       
+
+                                    </div>
+
+                                    <div class="fs-14 fw-300">
+                                        Sé el primero en compartir tu historia.
+                                    </div>
+                                </div>
+                            <?php else: ?>
+                                <div class="already-completed">
+                                    <div class="avatars d-flex justify-content-end">
+                                        <?php
+                                        $max_visible = 5;
+                                        $count = 0;
+
+                                        foreach ($autores as $user_id) {
+                                            if ($count >= $max_visible) break;
+
+                                            $user = get_userdata($user_id);
+                                            if (!$user) continue;
+
+                                            $initials = get_user_initials($user_id);
+                                            $email = esc_attr($user->user_email);
+                                            ?>
+                                            <div class="avatar" data-bs-toggle="tooltip" title="<?php echo $email; ?>">
+                                                <span><?php echo esc_html($initials); ?></span>
+                                            </div>
+                                            <?php
+                                            $count++;
+                                        }
+
+                                        ?>
+                                    </div>
+
+                                    <div class="fs-14 fw-300 mt-1">
+                                        <?php
+                                        $restantes = count($autores) - $max_visible;
+                                        if ($restantes > 0) {
+                                            echo 'Y ' . $restantes . ' más ya compartieron su historia.';
+                                        } else {
+                                            echo 'Compartí la tuya.';
+                                        }
+                                        ?>
+                                    </div>
+                                </div>
+
+                            <?php endif; ?>
+
+
+
                                 </div>
 
                             </form>
 
-                            <div class="already-completed mt-4">
-                                <div class="avatars">
-                                    <div class="avatar" data-bs-toggle="tooltip" title="">
-                                        <span>ac</span>
-                                    </div>
-                                    <div class="avatar" data-bs-toggle="tooltip" title="">
-                                        <span>ac</span>
-                                    </div>
-                                    <div class="avatar" data-bs-toggle="tooltip" title="">
-                                        <span>ac</span>
-                                    </div>
-                                    <div class="avatar" data-bs-toggle="tooltip" title="">
-                                        <span>ac</span>
-                                    </div>
-                                    <div class="avatar" data-bs-toggle="tooltip" title="">
-                                        <span>ac</span>
-                                    </div>
-                                </div>
-                                <div class="fs-14 fw-300 mt-1">
-                                    Y 15 más ya subieron sus historias.
-                                </div>
-                            </div>
+                            <!-- Avatars -->
+
+                            
+
                         </div>
 
 
