@@ -197,3 +197,42 @@ add_action('admin_init', function() {
         exit;
     }
 });
+
+
+function rcp_check_throttle_status($email) {
+  $email = sanitize_email($email);
+  $ip = $_SERVER['REMOTE_ADDR'];
+
+  $key_invalid = 'login_attempts_invalid_' . md5($ip);
+  $key_total = 'login_attempts_total_' . md5($ip);
+  $key_same_email = 'login_attempts_same_' . md5($ip . $email);
+
+  $invalid_attempts = (int) get_transient($key_invalid);
+  $total_attempts = (int) get_transient($key_total);
+  $same_email_attempts = (int) get_transient($key_same_email);
+
+  if ($invalid_attempts >= 20) {
+    return 'Demasiados intentos fallidos desde esta IP. Intentá más tarde.';
+  }
+
+  if ($total_attempts >= 500) {
+    return 'Demasiadas solicitudes desde esta IP. Esperá una hora.';
+  }
+
+  if ($same_email_attempts >= 20) {
+    return 'Demasiadas solicitudes para este correo desde tu IP. Esperá un momento.';
+  }
+
+  // Incrementar los contadores
+  set_transient($key_total, $total_attempts + 1, HOUR_IN_SECONDS);
+  set_transient($key_same_email, $same_email_attempts + 1, HOUR_IN_SECONDS);
+
+  return true;
+}
+
+
+
+function rcp_is_admin_user($user) {
+  if (!$user || !($user instanceof WP_User)) return false;
+  return in_array('administrator', (array) $user->roles, true);
+}
