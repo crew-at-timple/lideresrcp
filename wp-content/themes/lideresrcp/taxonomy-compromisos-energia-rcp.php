@@ -124,7 +124,7 @@ get_header();
             ?>
 
                 <div class="compromiso--grid_videos">
-                    <div class="compromiso--grid_title">¿Alguna vez te paso?</div>
+                    <div class="compromiso--grid_title">¿Alguna vez te pasó?</div>
                     <div class="compromiso--grid_desc">Mirá los videos sobre situaciones típicas y contanos tus experiencias similares</div>
 
                     <div class="compromiso--grid_slider">

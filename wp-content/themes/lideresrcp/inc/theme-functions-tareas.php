@@ -148,3 +148,60 @@ function tarea_existe_para_usuario_y_term($user_id, $term_slug) {
 
     return !empty($query->posts);
 }
+
+
+
+
+function obtener_autores_y_cantidad_por_term($term_slug) {
+    $query = new WP_Query([
+        'post_type'      => 'respuestas',
+        'posts_per_page' => -1,
+        'tax_query'      => [
+            [
+                'taxonomy' => 'compromisos',
+                'field'    => 'slug',
+                'terms'    => $term_slug,
+            ]
+        ],
+        'fields' => 'ids',
+    ]);
+
+    $post_ids = $query->posts;
+    $autores = [];
+
+    foreach ($post_ids as $post_id) {
+        $autor_id = get_post_field('post_author', $post_id);
+        if ($autor_id) {
+            $autores[] = (int) $autor_id;
+        }
+    }
+
+    $autores_unicos = array_unique($autores);
+
+    return [
+        'cantidad' => count($post_ids),
+        'autores'  => array_values($autores_unicos),
+    ];
+}
+
+
+
+
+function obtener_inicio_aleatorio_anecdota() {
+    $inicios = [
+        'Eran las 17:52…',
+        'Un cliente llamó diciendo que su impresora...',
+        'Todo iba bien hasta que ...”',
+        'La sala de reuniones estaba llena...',
+        'Era un lunes tranquilo cuando...',
+        'Un mail con el asunto “URGENTE”...',
+        'El cliente juraba que su contraseña era...',
+        'Nos miramos todos cuando dijo...',
+        'El sistema colapsó justo cuando...',
+        'Era viernes a las 18:59...',
+        'El chat explotó con emojis...',
+        'Cuando abrí el ticket...',
+    ];
+
+    return $inicios[array_rand($inicios)];
+}
