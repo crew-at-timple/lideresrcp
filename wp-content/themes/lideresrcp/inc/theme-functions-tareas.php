@@ -145,5 +145,6 @@ function tarea_existe_para_usuario_y_term($user_id, $term_slug) {
         'fields' => 'ids',
     ]);
 
+
     return !empty($query->posts);
 }

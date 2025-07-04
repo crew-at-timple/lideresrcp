@@ -29,7 +29,7 @@ get_header();
         <div class="compromiso--header text-center text-sm-start">
             <h1 class="c-white tiempos mb-2">EnergíaRCP</h1>
             <div class="c-white">
-                Managers, en equipo, tomamos el compromiso de aplicar la visión radical de cliente en aspectos claves del negocio
+                Los managers tomamos el compromiso de aplicar la visión radical de cliente en aspectos claves del negocio
             </div>
         </div>
 

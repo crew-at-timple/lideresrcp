@@ -30,7 +30,7 @@ get_header();
         <div class="compromiso--header text-center text-sm-start">
             <h1 class="c-white tiempos mb-2">EnergíaRCP</h1>
             <div class="c-white">
-                Managers, en equipo, tomamos el compromiso de aplicar la visión radical de cliente en aspectos claves del negocio
+                Los managers tomamos el compromiso de aplicar la visión radical de cliente en aspectos claves del negocio
             </div>
         </div>
 
@@ -39,8 +39,8 @@ get_header();
         $parent = get_term($current_term->parent, 'compromisos');
         
         if ($current_term->parent) {
-        
-            if(!tarea_existe_para_usuario_y_term($user_id, $parent->slug)){
+
+            if(!tarea_existe_para_usuario_y_term(wp_get_current_user()->ID, $parent->slug)){
 
             ?>
             <div class="compromiso--videos">
