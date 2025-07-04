@@ -255,9 +255,7 @@
     }
 
     &--videos {
-        background-color: #F7F8F8;
-        border-radius: 10px;
-        padding: 20px;
+        
 
         &_video {
             border-radius: 10px;
@@ -326,4 +324,10 @@
 
     }
 
+}
+
+.bg-white{
+    background-color: #F7F8F8;
+    border-radius: 10px;
+    padding: 20px;
 }

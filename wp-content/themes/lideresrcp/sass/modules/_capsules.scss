@@ -1,0 +1,54 @@
+.capsule-videos{
+    background-color: #F7F8F8;
+    border-radius: 10px;
+    padding: 20px;
+
+    &--header{
+        position: relative;
+
+        .avatar{
+            --w:60px;
+            position: absolute;
+            top:0;
+            right:0;
+            transform: translate(50%, -50%);
+        }
+    }
+
+    &--comments{
+        border-top:1px solid rgba(13, 22, 148, .35);
+        margin-top: 18px;
+        padding-top:14px;
+
+        &_form{
+            margin-top: 40px;
+
+            .avatar-floating{
+                &__wrapper{
+                    padding-right: 10px;
+                }
+            }
+        }
+    }
+}
+
+.capsule-comentario{
+    position:relative;
+
+    &--header{
+        .avatar {
+            --w: 35px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    }
+
+    &--content{
+        padding-right:35px;
+    }
+
+    & + .capsule-comentario {
+        margin-top:40px;
+    }
+}
