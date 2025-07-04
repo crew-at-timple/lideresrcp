@@ -5,6 +5,9 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
+add_theme_support('post-thumbnails');
+
+
 /**
  * Registra el tipo de post personalizado "Equipos"
  */
@@ -119,6 +122,67 @@ function registrar_post_type_respuestas() {
     register_post_type( 'respuestas', $args );
 }
 add_action( 'init', 'registrar_post_type_respuestas', 0 );
+
+
+/**
+ * Registra el tipo de post personalizado "Videos"
+ */
+function registrar_post_type_videos()
+{
+    $labels = array(
+        'name'                  => _x('Videos', 'Post Type General Name', 'text_domain'),
+        'singular_name'         => _x('Video', 'Post Type Singular Name', 'text_domain'),
+        'menu_name'             => __('Videos', 'text_domain'),
+        'name_admin_bar'        => __('Video', 'text_domain'),
+        'archives'              => __('Archivo de Videos', 'text_domain'),
+        'attributes'            => __('Atributos de Videos', 'text_domain'),
+        'parent_item_colon'     => __('Video Padre:', 'text_domain'),
+        'all_items'             => __('Todos los Videos', 'text_domain'),
+        'add_new_item'          => __('Añadir Nuevo Video', 'text_domain'),
+        'add_new'               => __('Añadir Nuevo', 'text_domain'),
+        'new_item'              => __('Nuevo Video', 'text_domain'),
+        'edit_item'             => __('Editar Video', 'text_domain'),
+        'update_item'           => __('Actualizar Video', 'text_domain'),
+        'view_item'             => __('Ver Video', 'text_domain'),
+        'view_items'            => __('Ver Videos', 'text_domain'),
+        'search_items'          => __('Buscar Respuesta', 'text_domain'),
+        'not_found'             => __('No encontrado', 'text_domain'),
+        'not_found_in_trash'    => __('No encontrado en la papelera', 'text_domain'),
+        'featured_image'        => __('Imagen Destacada', 'text_domain'),
+        'set_featured_image'    => __('Establecer imagen destacada', 'text_domain'),
+        'remove_featured_image' => __('Eliminar imagen destacada', 'text_domain'),
+        'use_featured_image'    => __('Usar como imagen destacada', 'text_domain'),
+        'insert_into_item'      => __('Insertar en video', 'text_domain'),
+        'uploaded_to_this_item' => __('Subido a este video', 'text_domain'),
+        'items_list'            => __('Lista de videos', 'text_domain'),
+        'items_list_navigation' => __('Navegación de lista de videos', 'text_domain'),
+        'filter_items_list'     => __('Filtrar lista de videos', 'text_domain'),
+    );
+    $args = array(
+        'label'                 => __('Video', 'text_domain'),
+        'description'           => __('Contenido relacionado con los videos', 'text_domain'),
+        'labels'                => $labels,
+        'supports'              => array('title', 'editor', 'thumbnail'),
+        'hierarchical'          => false,
+        'public'                => true,
+        'show_ui'               => true,
+        'show_in_menu'          => true,
+        'menu_position'         => 6,
+        'show_in_admin_bar'     => true,
+        'show_in_nav_menus'     => true,
+        'can_export'            => true,
+        'has_archive'           => false,
+        'exclude_from_search'   => false,
+        'publicly_queryable'    => false,
+        'capability_type'       => 'post',
+        'show_in_rest'          => true,
+        'rewrite'               => array('slug' => 'videos'), // Slug personalizado para el archivo
+        'show_in_sitemap'       => false, // NO debe estar en el sitemap (requiere plugin de SEO como Yoast/Rank Math)
+    );
+    register_post_type('videos', $args);
+}
+add_action('init', 'registrar_post_type_videos', 0);
+
 
 
 /**
