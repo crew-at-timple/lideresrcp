@@ -52,3 +52,10 @@
         margin-top:40px;
     }
 }
+
+.capsule-sticky{
+    @include media-breakpoint-up(sm){
+        position:sticky;
+        top:0;
+    }
+}
