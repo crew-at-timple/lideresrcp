@@ -40,6 +40,19 @@
     }
 }
 
+.btn-gray {
+    background-color: #efefef;
+    background-image: linear-gradient(100deg,
+            #fff 50%,
+            #efefef 50%);
+
+    color: #001491;
+
+    &:hover {
+        color: #001491;
+    }
+}
+
 .btn-blue {
     background-color: #001391;
     background-image: linear-gradient(100deg,

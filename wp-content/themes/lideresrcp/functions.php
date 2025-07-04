@@ -81,6 +81,7 @@ function theme_scripts()
     // Bootstrap 5 JS Bundle (includes Popper.js) - ADD THIS LINE
     // It's crucial to load this before any of your scripts that might interact with Bootstrap components.
     wp_enqueue_script( 'bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js', array(), '5.3.3', true );
+    wp_enqueue_script( 'bootstrap-masonry-js', 'https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js', array(), '1.0', true );
 
     wp_enqueue_script( 'slick-script', get_template_directory_uri() . "/assets/slick-1.8.1/slick.min.js", array('jquery'), SCRIPTS_VERSION, true );
     wp_enqueue_script( 'main-script', get_template_directory_uri() . "/js/main.js", array('jquery'), SCRIPTS_VERSION, true );

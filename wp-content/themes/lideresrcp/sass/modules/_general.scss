@@ -37,6 +37,10 @@ body {
 
 }
 
+.form-control-blue {
+	border-color:#0D1694;
+}
+
 .form-floating {
 	&>.form-control~label {
 		opacity: 1;
@@ -77,6 +81,10 @@ body {
 
 .c-blue-lt {
 	color: #82C4FA;
+}
+
+.c-orange{
+	color:#FFB56B;
 }
 
 .avatar {
