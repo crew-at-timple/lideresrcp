@@ -44,7 +44,7 @@
 
     $('form').on('submit', function(e) {
         var $form = $(this);
-        var $submit = $form.find('input[type="submit"]');
+        var $submit = $form.find('.btn-submit');
 
         if ($submit.prop('disabled')) {
             e.preventDefault();

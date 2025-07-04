@@ -4,7 +4,7 @@ Template Name: Custom Login Page
 */
 get_header();
 
-$logo_url = get_template_directory_uri() . '/images/ico-send-white.png';
+$logo_url = get_template_directory_uri() . '/images/header-mail.png';
 $mensaje = '';
 $show_confirmation = false;
 
@@ -28,8 +28,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && is_email($_POST['email'])) {
     <td align="center">
       <table width="600" cellpadding="0" cellspacing="0" border="0" style="background-color: #ffffff; border-radius: 8px; overflow: hidden;">
         <tr>
-          <td style="padding: 40px 20px 20px 20px;" align="center">
-            <img src="{$logo_url}" alt="Logo" style="max-width: 184px;">
+          <td style="padding: 40px 20px 0 20px;" align="center">
+            <img src="{$logo_url}" alt="Logo" style="max-width: 100%;">
           </td>
         </tr>
         <tr>
@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && is_email($_POST['email'])) {
             <p style="color: #555; font-size: 16px;">
               Hacé clic en el botón para ingresar a tu cuenta. Este enlace es válido por 15 minutos.
             </p>
-            <a href="{$login_url}" style="display: inline-block; background-color: #0d1694; color: #ffffff; text-decoration: none; padding: 12px 24px; border-radius: 4px; font-weight: bold; margin-top: 20px;">
+            <a href="{$login_url}" style="display: inline-block; background-color: #0d1694; color: #ffffff; text-decoration: none; padding: 12px 24px; border-radius: 10px; font-weight: bold; margin-top: 20px;">
               Ingresar al sitio
             </a>
             <p style="margin-top: 30px; color: #777; font-size: 14px;">

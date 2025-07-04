@@ -75,12 +75,32 @@ get_header();
             <div class="compromiso--grid_desafio">
                 <div class="compromiso--grid_desafio--inner">
 
+                    <?php if(!tarea_existe_para_equipo_y_term($GLOBALS['current_user_team_id'], "compromiso-grupal")){ ?>
+
                     <div class="compromiso--grid_title">Compromiso Grupal RCP</div>
                     <div class="compromiso--grid_desc">Managers, en equipo, tomamos el compromiso de aplicar la visión radical de cliente en aspectos claves del negocio</div>
 
                     <div class="mt-auto">
                         <a href="<?php echo $term_link; ?>" class="btn btn-white d-block w-100 mt-4">Completar tu compromiso</a>
                     </div>
+
+                    <?php } else { ?>
+
+                        <div class="text-center">
+
+                            <img class="d-block mb-3 ms-auto me-auto" style="height: 75px; width: auto;" src="<?php echo get_template_directory_uri(); ?>/images/ico-send-white.png">
+
+                            <h3 class="c-white tiempos mb-3">
+                                ¡Compromiso enviado!
+                            </h3>
+
+                            <p>Tiene <strong>2 semanas</strong> para aplicar el compromiso. <br/>
+                                En la próxima reunión grupal cada miembros del grupo deberá subir un <strong>resumen de como le fue y una foto o imagen que muestre los resultados</strong>.</p>
+
+                        </div>
+
+                    <?php } ?>
+
                 </div>
             </div>
 

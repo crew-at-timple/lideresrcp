@@ -18,7 +18,7 @@ get_header();
               if ( ! is_wp_error( $term_link ) ) {
             ?>
 
-            <a href="<?php $term_link; ?>" class="btn btn-link btn-back c-blue-lt p-0">Volver atras</a>
+            <a href="<?php echo $term_link; ?>" class="btn btn-link btn-back c-blue-lt p-0">Volver atras</a>
 
 
             <?php }
@@ -128,8 +128,8 @@ get_header();
                             <div class="col-lg-6">
                                 
                                 
-                                <strong>c. Deadline</strong>
-                                <p><i>El deadline es la próxima reunión virtual</i></p>
+                                <strong>c. Próxima entrega</strong>
+                                <p><i>La próxima reunión virtual</i></p>
                                 <div class="form-floating mb-4">
                                     <textarea disabled required class="form-control" placeholder="¿Cuándo?" id="cuando" name="cuando" style="height: 80px;">⏰¡15 días desde hoy!</textarea>
                                     <label for="cuando">¿Cuándo?</label>
@@ -167,7 +167,7 @@ get_header();
 
                 <!-- Botón de envío -->
                 <div class="text-left mt-4">
-                    <button type="submit" class="btn btn-white">Enviar nuestro compromiso grupal</button>
+                    <button type="submit" class="btn btn-white btn-submit">Enviar nuestro compromiso grupal</button>
                 </div>
 
                 <?php wp_nonce_field('guardar_formulario_respuesta', 'formulario_respuesta_nonce'); ?>
@@ -185,8 +185,8 @@ get_header();
                         ¡Compromiso enviado!
                     </h3>
 
-                    <p>Tiene <strong>2 semanas</strong> para aplicar su compromiso. <br/>
-                    En la próxima reunión grupal cada miembros del grupo deberá subir un resumen de como le fue y una foto o imagen que muestre los resultados.</p>
+                    <p>Tiene <strong>2 semanas</strong> para aplicar el compromiso. <br/>
+                    En la próxima reunión grupal cada miembros del grupo deberá subir un <strong>resumen de como le fue y una foto o imagen que muestre los resultados</strong>.</p>
 
                 </div>
 

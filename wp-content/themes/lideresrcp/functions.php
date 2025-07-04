@@ -184,3 +184,16 @@ function get_svg_icon( $svg_name, $class = '' ) {
     }
     return ''; // Retorna vacío si el archivo no existe
 }
+
+
+add_filter('show_admin_bar', function($show) {
+    return current_user_can('administrator') ? $show : false;
+});
+
+
+add_action('admin_init', function() {
+    if (!current_user_can('administrator') && !defined('DOING_AJAX')) {
+        wp_redirect(home_url());
+        exit;
+    }
+});
